@@ -31,21 +31,6 @@ source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
 
-#ip fixo
-auto enp0s3
-allow-hotplug enp0s3
-iface enp03 inet static
-  address 10.0.0.100
-  netmask 255.255.255.0
-  gateway 10.0.0.1" >> /etc/network/interfacesecho"# This file describes the network interfaces available on your system
-# and hou to activate them. For more information, see interfaces()
-
-source /etc/network/interfaces.d/*
-
-#The loopback network interface
-auto lo
-iface lo inet loopback
-
 #ip dinamico
 auto enp0s3
 allow-hotplug enp0s3

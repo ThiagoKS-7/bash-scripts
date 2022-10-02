@@ -1,4 +1,3 @@
-#!/bin/bash
 echo "criando pastas..."
 mkdir /home/aulas
 mkdir /home/aulas/aula1
