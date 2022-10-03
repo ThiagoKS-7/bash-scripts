@@ -1,0 +1,24 @@
+#!/bin/bash
+config=. # trocar pelo arquivo .ovpn
+senha=. # trocar pela senha do sudo
+home=/home/example # trocar pela raiz do PC
+dir=Documentos/projetos
+vpn_dir=Documentos/vpn
+conf_vpn=email.local__ssl_vpn_config # trocar pelo nome do arquivo
+
+cd ~
+while getopts p: flag
+do
+  case "${flag}" in
+    p) path=${OPTARG};;
+  esac
+done
+if [ ${#path} -gt 0 ];
+then
+  echo "[INFO] Abrindo $path"
+  cd $home/$dir
+  code .
+  gnome-terminal --tab
+fi
+cd $home/$vpn_dir
+echo $senha | sudo -S openvpn $conf_vpn.ovpn
